@@ -388,7 +388,7 @@ class LoadImagesAndLabels(Dataset):  # for training/testing
         # Check cache
         self.label_files = img2label_paths(self.img_files)  # labels
 #         cache_path = (p if p.is_file() else Path(self.label_files[0]).parent).with_suffix('.cache')  # cached labels
-        if "Train" in self.label_files:
+        if "Train" in self.label_files[0]:
             cache_path = Path('/kaggle/working/cache/train/labels.cache')
         else:
             cache_path = Path('/kaggle/working/cache/test/labels.cache')
